@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta http-equiv="Expires" content="Mon, 26 Jul 1997 05:00:00 GMT">
+	<meta http-equiv="Pragma" content="no-cache">
+	<title>uTender</title>	
+</head>    
+
+
+
+<body>	
+	<header>
+		<div class="logo"><a href="index.html"><img src="img/logo.svg" alt=""></a></div>		
+		<div class="nav_links">
+			<a href="#faq" class="popup">FAQ</a>
+			<a href="#about" class="popup">Contact</a>
+		</div>
+	</header>
+	<div class="content">		
+		<div class="tabs">
+			<ul>
+				<li><button class="active tenders_tab">Tenders</button></li>
+				<li><button class="my_tenders_tab">My tenders</button></li>
+				<li><button class="favorites_tab">Favorites</button></li>
+			</ul>
+		</div>
+		<a href="#add" class="popup"><button class="create">+</button></a>
+	
+		<div class="filters">			
+			<label for="by_category">category: </label>
+			<select name="by_category" id="by_category">
+				<option value="design">design</option>
+				<option value="naming">naming</option>
+				<option value="copyright">copyright</option>
+				<option value="equipment purchase">equipment purchase</option>
+				<option value="house building">house building</option>
+			</select>
+
+			<label for="by_cost">cost: </label>
+			<select name="by_cost" id="by_cost">
+				<option value="1">ascending</option>
+				<option value="0">descending</option>				
+			</select>
+
+			<label for="by_deadline">deadline: </label>
+			<select name="by_deadline" id="by_deadline">
+				<option value="1">urgent</option>
+				<option value="0">long-term</option>				
+			</select>
+		</div>
+
+		<div class="contests">
+
+			<div class="row">
+			</div>			
+		</div>
+
+	</div>
+	
+
+	<div id="add" class="mfp-fade mfp-hide">	
+		<h2>Add tender</h2>
+		<div class="item">
+			<label for="name">name</label>
+			<input type="text" class="name" name="name">
+		</div>		
+		<div class="item textarea">
+			<label for="descr">description</label>			
+			<textarea name="descr" id="descr" cols="30" rows="10"></textarea>
+		</div>		
+		<div class="item">
+			<label for="cost">cost</label>
+			<input type="number" class="cost" name="cost">
+		</div>		
+		<div class="item">
+			<label for="deadline">deadline</label>
+			<input type="date" class="deadline" name="deadline">
+		</div>		
+		<div class="item">
+			<label for="by_category">category: </label>
+			<select name="by_category" id="by_category">
+				<option value="design">design</option>
+				<option value="naming">naming</option>
+				<option value="copyright">copyright</option>
+				<option value="equipment purchase">equipment purchase</option>
+				<option value="house building">house building</option>
+			</select>
+		</div>	
+		<button class="send">Add tender</button>	
+	</div>
+
+	<div id="faq" class="mfp-fade mfp-hide">	
+		<h2>FAQ</h2>
+
+		<div class="question">
+			<h2>What is uTender?</h2>
+			<p>Blockchain is a safe and stress-resistant solution due to its decentralization</p>
+		</div>
+		<div class="question">
+			<h2>Why place a tender on uTender?</h2>
+			<p>Transparency. Security. Decentralization.</p>
+		</div>
+		<div class="question">
+			<h2>What is a smart contract?</h2>
+			<p>A smart contract is a self-executing piece of code stored in the Blockchain Network. A smart contract stipulates the terms of agreement between the parties and defines what actions will be executed when certain conditions are met. In our case the Smart Contract stipulates transparent and secure implementation of the tender. Smart contracts are public and unalterable.</p>
+		</div>		
+		<div class="question">
+			<h2>What is a smart contract?</h2>
+			<p>A smart contract is a self-executing piece of code stored in the Blockchain Network. A smart contract stipulates the terms of agreement between the parties and defines what actions will be executed when certain conditions are met. In our case the Smart Contract stipulates transparent and secure implementation of the tender. Smart contracts are public and unalterable.</p>
+		</div>		
+		<div class="question">
+			<h2>What do I need то make a tender?</h2>
+			<p>It is free.You just need some gas for execute transaction. WebExtensionWallet. To make a tender or submit work you will need to install the WebExtensionWallet. https://github.com/ChengOrangeJu/WebExtensionWallet</p>
+		</div>		
+		<div class="question">
+			<h2>Where to get GAS to make tender or submit work?</h2>
+			<p>https://faucet.nebulas.ru/</p>
+		</div>		
+		<div class="question">
+			<h2>Can I modify the tender?</h2>
+			<p>Once the tender is published to the blockchain there is no way back. You won´t be able to change it. Make sure you enter the correct data before publishing the tender!</p>
+		</div>		
+		<div class="question">
+			<h2>What happens if the customer does not choose the winner?</h2>
+			<p>If the deadline + 1 day passes and the customer does not choose the winner, then the money can be distributed among all participants.</p>
+		</div>		
+	</div>	
+
+	<div id="about" class="mfp-fade mfp-hide">
+		<h2>Contact</h2>
+		<span>E-mail: 
+			<a href="mailto:alexdarkstalkeroriginal@gmail.com">alexdarkstalkeroriginal@gmail.com</a>
+		</span>
+	</div>
+
+	<a href="#transaction" class="transaction" style="position: absolute; width: 0.1px; opacity: .1"></a>	
+	<div id="transaction" class="mfp-hide mfp-fade">
+		<p>Transaction is <span class="status_trans"></span></p>
+		<img src="img/pending.gif" alt="">
+		<div class="hash"></div>			
+	</div>
+
+	<div class="noExtension" style="display: none"> 
+		NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use BlackJack Nebulas or try CTRL+F5
+	</div>
+	<div class="errNetwork" style="display: none">
+		NOTE: Sorry, you use incorrect net
+	</div>	
+
+	<div class="tender_wrap content">	
+		
+		<div class="contests">
+			<button class="back">back</button>
+			<div class="tender">				
+				<h2>Name of contest</h2>				
+				<p class="descr_full">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est assumenda omnis iusto, ipsa facere non vitae pariatur iste, illo eos quidem quam maiores velit perspiciatis, hic mollitia, aspernatur id nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est assumenda omnis iusto, ipsa facere non vitae pariatur iste, illo eos quidem quam maiores velit perspiciatis, hic mollitia, aspernatur id nulla.</p>
+				<span class="category">web-design</span>
+				<span class="cost">3000</span>
+				<span class="deadline" title="deadline">10.10.2018</span>
+				<a href="#" class="heart"><img class="favorite" src="img/heart_gray.png"></a>			
+			</div>	
+			<button class="get_dist" title="" disabled="true">Distribute the money <a href="#faq" class="popup tip">?</a></button>
+			<div class="add_response">
+				<h2>Add your offer and take part in the tender</h2>
+				<label for="offer">Write your offer:</label>
+				<textarea name="offer" id="offer" cols="30" rows="10" class="offer"></textarea>
+				<button class="send_offer">Add offer</button>
+			</div>
+			<div class="result_winner"></div>
+			<div class="resposnses">
+				<h2>Tenderers</h2>			
+			</div>				
+		</div>		
+
+	</div>
+
+
+	<script src='lib/jquery-3.3.1.min.js'></script>
+	<link rel="stylesheet" href="lib/main.css">	
+	<script src='lib/nebPay.js'></script>    	
+    <script src='lib/nebulas.js'></script>
+    <script src='lib/jquery.magnific-popup.js'></script>
+    <script src="lib/common.js"></script>      
+    <link rel="stylesheet" href="lib/magnific-popup.css">    
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,700,900" rel="stylesheet">
+    <script>
+    
+	</script>
+</body>
+</html>

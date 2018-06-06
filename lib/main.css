@@ -1,0 +1,536 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+  line-height: 1.4;
+  font-size: 18px;  
+  position: relative;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;    
+}
+
+p, h1, h2, h3, h4, h5, span {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+} 
+
+h1, h2, h3, h4, h5 {
+  color: #000;
+}
+
+input, button {
+  font-family: 'Titillium Web', sans-serif;  
+}
+
+input:focus, button:focus, a:focus {
+  outline: unset;
+}
+
+.tabs button, .send, .send_offer, .accept, .decline, .back, .get_dist {
+  background: rgba(0, 0, 255, .4);  
+  transition: .5s;
+  width: 160px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 30px;
+  font-size: 16px;
+}
+
+.tabs button:hover, .send:hover, .send_offer:hover, .back:hover, .get_dist_active:hover {
+  background: rgba(0, 0, 255, 1);  
+}
+
+.send {
+  margin: 30px auto 0 auto;
+  display: block;
+}
+
+.tabs {
+  position: relative;  
+}
+
+.create {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;  
+  line-height: 0;
+  right: 0;
+  color: rgba(0, 0, 255, .6);  
+  transition: .5s;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.create:hover {
+  color: rgba(0, 0, 255, 1);  
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+header {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  height: 100px;
+}
+
+.logo img {
+  width: 130px;  
+}
+
+.content, .tender_wrap {
+  width: 1200px;
+  margin: 70px auto 0 auto; 
+  position: relative;
+}
+
+.nav_links {
+  position: absolute;
+  right: 0;
+  top: 45px;
+}
+
+.nav_links a {
+  margin-left: 30px;
+  color: rgba(0, 0, 255, .6); 
+  transition: .5s;
+  border-bottom: 1px solid rgba(0, 0, 255, .6);
+}
+
+.nav_links a:hover {
+  color: rgba(0, 0, 255, 1); 
+  border-bottom: 1px solid rgba(0, 0, 255, 1); 
+}
+
+.filters {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 255, .3);
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+label {
+  font-size: 14px;
+  opacity: .8;
+  margin-right: 3px;
+}
+
+select {
+  margin-right: 30px;
+  border: 1px solid rgba(0, 0, 255, .3);
+  font-size: 12px;
+  padding: 3px;
+}
+
+.tabs ul li .active {
+  background: rgba(0, 0, 255, 1);  
+}
+
+#add, #faq, #about, #transaction {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  background: #fff;
+  position: relative;
+}
+
+#add h2, #faq h2, #about h2, #transaction h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.item {
+  width: 300px;
+  margin: 0 auto 15px auto;
+  position: relative;
+}
+
+#add .item input, #add .item select, #add .item textarea {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  margin-right: 0;
+  border: .5px solid rgba(0, 0, 255, .3);
+  padding: 3px;
+  height: 25px;
+}
+
+#add .item textarea {
+  height: 80px;
+}
+
+.textarea {
+  margin-bottom: 70px;
+}
+
+#about span {
+  display: block;
+  width: 340px;
+  margin: 0 auto;
+}
+
+#about span a {
+  margin-left: 10px;
+  color: rgba(0, 0, 255, .6); 
+  transition: .5s;
+  border-bottom: 1px solid rgba(0, 0, 255, .6);
+}
+
+#about span a:hover {
+  color: rgba(0, 0, 255, 1); 
+  border-bottom: 1px solid rgba(0, 0, 255, 1); 
+}
+
+.contest {  
+  background: #81ea81;
+  padding: 20px;
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  position: relative;
+}
+
+.pending {
+  background: #f9e3bb;  
+}
+
+.complete h3:after {
+  content: 'complete';
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: red;
+}
+
+.contest h3 {
+  margin-bottom: 30px;
+}
+
+.contest p {
+  line-height: 1.3;
+  font-size: 16px;
+  opacity: .8;
+  height: 90px;
+  width: 80%;
+  word-wrap: break-word;
+}
+
+.contest .category, .contest .cost, .contest .deadline, .contest .heart {
+  position: absolute;
+}
+
+.contest .cost {
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+}
+
+.contest .heart {
+  width: 35px;
+  top: 15px;
+  right: 20px;
+  transition: .5s;
+}
+
+.contest .heart img {
+  width: 100%;
+}
+
+.contest .category {
+  top: 45px;
+  left: 20px;
+  opacity: .5;
+  font-size: 14px;
+}
+
+.contest .cost:after, .tender .cost:after {
+  content: 'NAS';
+  margin-left: 5px;
+}
+
+.contest .deadline {
+  bottom: 20px;
+  left: 20px;
+}
+
+.contest:nth-child(3n+3) {
+  margin-right: 0;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;       
+}
+
+.contests {
+  margin-top: 50px;
+}
+
+.tender {
+  width: 100%;
+  position: relative; 
+  border-top: 1px solid rgba(0, 0, 255, .3);
+  margin-top: 20px;
+  padding-top: 70px; 
+  padding-left: 20px; 
+}
+
+.tender:after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+  background: #f9e3bb;  
+  width: 1130px;
+  position: absolute;
+}
+
+.tender .descr_full {
+  width: 60%;
+  margin-top: 40px;
+  line-height: 1.4;
+}
+
+.tender .category {
+  font-size: 16px;
+  opacity: .7;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+}
+
+.tender .cost {
+  font-size: 30px;
+  position: absolute;
+  right: 110px;
+  bottom: 0;
+}
+
+.tender .deadline {
+  position: absolute;
+  bottom: 40px;
+  right: 110px;
+}
+
+.tender .heart {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+}
+
+.tender .heart img {
+    width: 40px;
+}
+
+.resposnses {
+  margin-top: 60px;
+  width: 100%;
+}
+
+.resposnses h2 {
+  margin-bottom: 20px;
+}
+
+.add_response {
+  margin-top: 90px;
+  width: 100%;
+}
+
+#offer {
+  border: 1px solid rgba(0, 0, 255, .3);
+  padding: 3px;
+  height: 200px;
+  width: 600px;
+  font-size: 18px;
+}
+
+.add_response label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.send_offer {
+  display: block;
+  margin-top: 10px;
+}
+
+.item_tender {
+  background: #fff1d7;
+  padding: 15px 15px 30px 15px;
+  position: relative;
+  margin: 30px 0;
+}
+
+.decision {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.likes {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+
+.likes img {
+  width: 30px;
+  position: absolute;
+  top: -3px;
+  left: -35px;
+}
+
+.likes span {
+  color: green;
+}
+
+.adress {
+  opacity: .8;
+}
+
+.text {
+  margin-top: 30px;
+  width: 90%;
+  line-height: 1.4;
+}
+
+.accept:hover {
+  background: rgba(2, 138, 2, 1);    
+}
+
+.decline:hover {
+  background: rgba(255, 0, 0, 1);
+}
+
+.accept {
+  background: rgba(2, 138, 2, .5);    
+}
+
+.decline {
+  background: rgba(255, 0, 0, .5); 
+  margin-left: 15px; 
+}
+
+.admin {
+  padding-bottom: 70px;
+}
+
+#transaction span, #transaction .hash p {
+  display: inline-block;
+}
+
+#transaction img {
+  display: inline-block;
+  position: absolute;
+  left: 200px;
+  top: 30px;
+  width: 80px;
+}
+
+.wokrs {
+  display: none;
+}
+
+.winner {
+  display: none;
+}
+
+.result_winner {
+  margin-top: 50px;
+}
+
+.result_winner .item_tender {
+  background: #81ea81;
+}
+
+.result_winner .admin {
+  padding-bottom: 20px;
+}
+
+.get_dist {
+  display: block;
+  position: relative;
+  background: rgba(0, 0, 255, .1);  
+  margin: 70px 0 30px 0;
+}
+
+.tip {
+  position: absolute;
+  right: -40px;
+  top: 3px;
+  background: rgba(0, 0, 255, .7);
+  color: #fff;
+  padding-bottom: 20px;
+  border-radius: 50%;
+  height: 25px;  
+  width: 25px;
+}
+
+.distribut h3:after {
+  content: 'distributed';
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: red;
+}
+
+
+.get_dist_active {
+ background: rgba(0, 0, 255, .5);   
+}
+
+.res_dist h2 {
+  margin-bottom: 10px;
+}
+
+.res_dist {
+  padding: 20px 40px;
+  background: #81ea81;
+}
+
+.question {  
+  width: 800px;
+  margin: 0 auto 25px auto;
+}
+
+.question:first-child {
+  margin-top: 30px;  
+}
+
+.question h2 {
+  margin-bottom: 10px !important;
+  font-size: 20px;
+  text-align: left !important;
+}
+
+.question p {
+  line-height: 1.3;
+  font-size: 18px;
+}
+
